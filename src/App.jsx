@@ -4,28 +4,31 @@ import ReactDOM from "react-dom";
 import { Background, Display } from "./shared";
 import "./sanitize.css";
 import "./app.css";
+import { Puzzle } from "./puzzle/Puzzle";
 
 function App() {
   const [gameState, setGameState] = useState("start");
+
+  const handleStart = () => {
+    setGameState("playing");
+  };
 
   return (
     <div className="background-images">
       <div className="background-image"></div>
       <div className="background-image"></div>
+      <div className="larateta-background"></div>
+      <div className="escaleta-background"></div>
+      <div className="frame-image"></div>
       <div className="game-screen">
-        {/* Contenido del juego */}
         {gameState === "start" && (
-          <div className="game-container">
-            {/* Aquí puedes colocar el contenido de tu juego */}
-            <h1>Bienvenido al juego</h1>
-            <button onClick={() => setGameState("playing")}>Empezar</button>
+          <div className="game-container-1">
+            <button className="start-button" onClick={handleStart}></button>
           </div>
         )}
         {gameState === "playing" && (
-          <div className="game-container">
-            {/* Aquí puedes colocar la lógica y los elementos de tu juego mientras se está jugando */}
-            <h1>Juego en progreso...</h1>
-            <button onClick={() => setGameState("start")}>Parar</button>
+          <div className="game-container-2">
+            <Puzzle setGameState={setGameState} />
           </div>
         )}
         {/* Puedes agregar más estados según sea necesario, como 'gameover', 'victory', etc. */}
