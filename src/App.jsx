@@ -23,12 +23,21 @@ function App() {
             <button className="start-button" onClick={handleStart}></button>
           </div>
         )}
+        {/* {gameState === "chooseScreen" && (
+          <div className="game-container-2">
+            <Puzzle setGameState={setGameState} />
+          </div>
+        )} */}
         {gameState === "playing" && (
           <div className="game-container-2">
             <Puzzle setGameState={setGameState} />
           </div>
         )}
-        {/* Puedes agregar más estados según sea necesario, como 'gameover', 'victory', etc. */}
+        {gameState === "win" && (
+          <div className="game-container-3">
+            <div className="win-message">You Win!</div>
+          </div>
+        )}
       </div>
     </div>
   );
