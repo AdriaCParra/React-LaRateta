@@ -1,9 +1,9 @@
 // PuzzleBoard.js
-import React, { useState } from "react";
+import { useState } from "react";
 import { PuzzlePiece } from "./PuzzlePiece";
 import "./Puzzle.css";
 
-export const Puzzle = ({ setGameState }) => {
+export const Puzzle = () => {
   const piecesRandomizer = (pieces) => {
     const piecesCopy = [...pieces];
     piecesCopy.sort(() => Math.random() - 0.5);

@@ -1,7 +1,4 @@
 import { useState } from "react";
-import React from "react";
-import ReactDOM from "react-dom";
-import { Background, Display } from "./shared";
 import "./sanitize.css";
 import "./app.css";
 import { Puzzle } from "./puzzle/Puzzle";

@@ -1,5 +1,4 @@
 // PuzzlePiece.js
-import React from "react";
 import "./Puzzle.css";
 
 export const PuzzlePiece = ({ id, image, onClick }) => {
